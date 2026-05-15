@@ -1,0 +1,17 @@
+Terraform AWS EC2 Instance using Data Sources
+
+This project demonstrates how to create an AWS EC2 instance using Terraform by dynamically fetching existing AWS resources such as VPC, Subnet, and AMI using Terraform Data Sources.
+
+The infrastructure is deployed in AWS using reusable and scalable Terraform configuration files.
+
+Project Overview
+
+In this project:
+
+Existing VPC is fetched dynamically
+Existing subnet is fetched dynamically
+Latest Amazon Linux 2 AMI is fetched automatically
+EC2 instance is created inside selected subnet
+Infrastructure is managed using Terraform
+
+This project helps avoid hardcoding AWS resource IDs and follows Infrastructure as Code (IaC) best practices.
