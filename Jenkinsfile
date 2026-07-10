@@ -11,6 +11,7 @@ steps {steps {
             url: 'https://github.com/Roopa78/terraform-projects.git'
 }
 }
+}
 
 
 stage('Build Docker Image') {
