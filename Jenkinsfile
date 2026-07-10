@@ -5,7 +5,10 @@ agent any
 stages {
 
 stage('Checkout') {
-steps {git 'https://github.com/Roopa78/terraform-projects.git'
+
+steps {steps {
+        git branch: 'main',
+            url: 'https://github.com/Roopa78/terraform-projects.git'
 }
 }
 
