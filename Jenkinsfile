@@ -18,9 +18,21 @@ sh 'docker build -t mywebsite .'
 
 
 stage('Docker Login') {
-steps {
-sh 'docker login -u roopaks -p Roopasha@15'
-}
+    steps {
+        withCredentials([usernamePassword(
+        credentialsId: 'dockerhub-creds',
+        usernameVariable: 'USER',
+        passwordVariable: 'PASS'
+        )]) {
+
+        sh '''
+        echo $PASS | docker login \
+        -u $USER \
+        --password-stdin
+        '''
+
+        }
+    }
 }
 
 
