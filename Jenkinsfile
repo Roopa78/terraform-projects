@@ -52,9 +52,6 @@ pipeline {
             steps {
 
                 sh '''
-                docker stop website || true
-                docker rm website || true
-
                 docker run -d \
                 --name website \
                 -p 80:80 \
