@@ -54,7 +54,7 @@ pipeline {
                 sh '''
 
                 docker run -d \
-                --name website \
+                --name web \
                 -p 80:80 \
                 roopaks/myweb:latest
                 '''
