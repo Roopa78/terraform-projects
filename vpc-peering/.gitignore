@@ -1,0 +1,6 @@
+MytfKeyPair.pem
+MytfKeyPair1.pem
+terraform.tfstate
+.terraform
+terraform.tfstate.backup
+.terraform.lock.hcl
