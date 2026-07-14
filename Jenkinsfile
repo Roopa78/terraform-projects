@@ -39,8 +39,8 @@ pipeline {
             steps {
 
                 sh '''
-                docker tag mywebsite roopaks/mywebsite:latest
-                docker push roopaks/mywebsite:latest
+                docker tag mywebsite roopaks/myweb:latest
+                docker push roopaks/myweb:latest
                 '''
 
             }
@@ -52,10 +52,11 @@ pipeline {
             steps {
 
                 sh '''
+
                 docker run -d \
                 --name website \
                 -p 80:80 \
-                roopaks/mywebsite:latest
+                roopaks/myweb:latest
                 '''
 
             }
