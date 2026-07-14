@@ -1,6 +1,0 @@
-ec2-instance-tf.pem
-.terraform
-terraform.tfstate
-terraform.tfstate.backup
-vpc-peering-keypair-2.pem
-.gitignore
