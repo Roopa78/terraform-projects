@@ -56,7 +56,7 @@ pipeline {
                 docker rm website || true
 
                 docker run -d \
-                --name web \
+                --name website \
                 -p 80:80 \
                 roopaks/mywebsite:latest
                 '''
