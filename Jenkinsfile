@@ -8,7 +8,7 @@ pipeline {
         stage('Build Docker Image') {
 
             steps {
-                sh 'docker build -t myweb ./app'
+                sh 'docker build -t mywebsite ./app'
             }
         }
 
@@ -39,8 +39,8 @@ pipeline {
             steps {
 
                 sh '''
-                docker tag myweb roopaks/myweb:latest
-                docker push roopaks/myweb:latest
+                docker tag mywebsite roopaks/mywebsite:latest
+                docker push roopaks/mywebsite:latest
                 '''
 
             }
@@ -52,11 +52,13 @@ pipeline {
             steps {
 
                 sh '''
+                docker stop website || true
+                docker rm website || true
 
                 docker run -d \
                 --name web \
                 -p 80:80 \
-                roopaks/myweb:latest
+                roopaks/mywebsite:latest
                 '''
 
             }
