@@ -1,3 +1,10 @@
+resource "aws_s3_bucket" "demobucket" {
+  bucket = var.bucket_name
+
+  tags = {
+    Name        = "tf_statefile"
+  }
+}
 resource "aws_vpc" "main" {
   cidr_block = "10.0.0.0/16"
   provider = aws.primary
@@ -62,7 +69,24 @@ to_port     = 8080
     protocol    = "tcp"
 cidr_blocks = ["0.0.0.0/0"]
   }
-
+  ingress {
+from_port   = 9090
+to_port     = 9090
+    protocol    = "tcp"
+cidr_blocks = ["0.0.0.0/0"]
+  }
+ingress {
+from_port   = 3000
+to_port     = 3000
+    protocol    = "tcp"
+cidr_blocks = ["0.0.0.0/0"]
+  }
+  ingress {
+from_port   = 9100
+to_port     = 9100
+    protocol    = "tcp"
+cidr_blocks = ["0.0.0.0/0"]
+  }
   egress {
 
 from_port = 0

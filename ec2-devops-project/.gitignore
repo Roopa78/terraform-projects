@@ -1,0 +1,7 @@
+.terraform.lock.hcl
+terraform.tfstate
+terraform.tfstate.backup
+ec2-instance-tf.pem
+.terraform/
+../ec2-instance/
+../s3-staticweb/
